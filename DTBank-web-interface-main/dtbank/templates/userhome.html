@@ -1,0 +1,122 @@
+{% if message%}
+<h2>{{message}}</h2>
+{% endif %}
+<br>
+
+<hr>
+<a href="/viewdruginfo"> View All About Drugs </a>
+
+<hr>
+<h2>View Interactions of a Drug</h2>
+<div class="row">
+  <div class="col-sm-1">
+  <form method="post" action="/viewdruginteractions/">
+    {% csrf_token %}
+      <p>DrugBank ID: <input type="text" name="id"/> </p>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary" value="Update">Click to view</button>
+  </form>
+
+<hr>
+<h2>View Side Effects of a Drug</h2>
+<div class="row">
+  <div class="col-sm-1">
+  <form method="post" action="/viewsideeffects/">
+    {% csrf_token %}
+      <p>DrugBank ID: <input type="text" name="id"/> </p>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary" value="Update">Click to view</button>
+  </form>
+
+
+
+<hr>
+<h2>View Interacting Targets of a Drug</h2>
+<div class="row">
+  <div class="col-sm-1">
+  <form method="post" action="/viewdruginteractingtargets/">
+    {% csrf_token %}
+      <p>DrugBank ID: <input type="text" name="id"/> </p>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary" value="Update">Click to view</button>
+  </form>
+
+<hr>
+<h2>View Interacting Drugs of a Protein</h2>
+<div class="row">
+  <div class="col-sm-1">
+  <form method="post" action="/viewproteininteractings/">
+    {% csrf_token %}
+      <p>Uniprot ID: <input type="text" name="id"/> </p>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary" value="Update">Click to view</button>
+  </form>
+
+<hr>
+<h2>View Drugs With Side Effect</h2>
+<div class="row">
+  <div class="col-sm-1">
+  <form method="post" action="/viewdrugswithsider/">
+    {% csrf_token %}
+      <p>UMLS CUI: <input type="text" name="id"/> </p>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary" value="Update">Click to view</button>
+  </form>  
+
+<hr>
+<h2>Search With Keyword and View Drugs</h2>
+<div class="row">
+  <div class="col-sm-1">
+  <form method="post" action="/searchandviewdrugs/">
+    {% csrf_token %}
+      <p>Keyword: <input type="text" name="id"/> </p>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary" value="Update">Click to view</button>
+  </form>
+
+<hr>
+<h2>View Interacting Drugs of a Protein With Least Side Effects </h2>
+<div class="row">
+  <div class="col-sm-1">
+  <form method="post" action="/viewdrugsleastside/">
+    {% csrf_token %}
+      <p>Uniprot ID: <input type="text" name="id"/> </p>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary" value="Update">Click to view</button>
+  </form>  
+  
+<hr>
+<h2>Filter and View Interacting Targets of a Drug </h2>
+<div class="row">
+  <div class="col-sm-1">
+  <form method="post" action="/filterdruginteractingtargets/">
+    {% csrf_token %}
+      <p>Uniprot ID: <input type="text" name="id"/> </p>
+      <p>Measurement Type: <input type="text" name="type"/> </p>
+      <p>Minimum Affinity: <input type="number" step=any name="min"/> </p>
+      <p>Maximum Affinity: <input type="number" step=any name="max"/> </p>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary" value="Update">Click to view</button>
+  </form>  
+
+<hr>
+<a href="/sameproteindrugs"> View drugs that affect the same protein </a>
+
+<hr>
+<a href="/samedrugproteins"> View Proteins that bind the same drug </a>
+<hr>
+<a href="/viewpapers"> View papers </a>
+<hr>
+<a href="/rankinstitutes"> Rank institutes according to their total scores </a>
+
+<hr>
+<a href="/login/"> Logout</a>
+<hr>

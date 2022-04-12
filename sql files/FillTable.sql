@@ -1,0 +1,10 @@
+LOAD DATA INFILE "/Users/kiymet/Desktop/data/Institution.csv" into table Institution fields terminated by ',' lines terminated by '\n' ( institution_name, score) ;
+LOAD DATA INFILE "/Users/kiymet/Desktop/data/User.csv" into table User_Work fields terminated by ','  ENCLOSED BY '"' lines terminated by '\n' (name, username,institution_name,password ) ;
+LOAD DATA INFILE "/Users/kiymet/Desktop/data/Database_Manager.csv" into table Database_Manager fields terminated by ',' lines terminated by '\n' (username,password,count) ;
+LOAD DATA INFILE "/Users/kiymet/Desktop/data/DrugBank.csv" into table Drug fields terminated by ',' ENCLOSED BY '"' lines terminated by '\n' (drugbank_id,drug_name,description,smiles) ;
+LOAD DATA INFILE "/Users/kiymet/Desktop/data/UniProt.csv" into table Uniprot fields terminated by ',' lines terminated by '\n' (uniprot_id,sequence,target_name) ;
+LOAD DATA INFILE "/Users/kiymet/Desktop/data/Article_Institution.csv" into table Article_Institution fields terminated by ',' lines terminated by '\n' (doi,institution_name) ;
+LOAD DATA INFILE "/Users/kiymet/Desktop/data/Article_Author.csv" into table Article_Author fields terminated by ',' lines terminated by '\n' (doi,username) ;
+LOAD DATA INFILE "/Users/kiymet/Desktop/data/Reaction_Related.csv" into table Reaction_Related fields terminated by ';' lines terminated by '\n' (reaction_id,affinity_NM,measure,drugbank_id,doi,uniprot_id) ;
+LOAD DATA INFILE "/Users/kiymet/Desktop/data/Sider.csv" into table Sider_Has fields terminated by ',' lines terminated by '\n' (umls_cui,drugbank_id,side_effect_name) ; 
+LOAD DATA INFILE "/Users/kiymet/Desktop/data/Interaction_with.csv" into table Interaction_with fields terminated by ',' lines terminated by '\n' (drugbank_id_1,drugbank_id_2) ; 

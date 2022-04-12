@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if message%}
+{{message}}
+{% endif %}
+<br>
+
+<table class="table">
+  <thead>
+    <tr>
+      {% for col in columns %}
+        <th scope="col">{{col}}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+  	{% for tuple in tuples %}
+	    <tr>
+	      {% for el in tuple%}
+	      <td>{{el}}</td>
+	      {% endfor %}
+	    </tr>
+	{% endfor %}
+  </tbody>
+</table>
+{%endblock content%}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Database Manager Login</h2>
+{% if message%}
+{{message}}
+{% endif %}
+<div class="row">
+  <div class="col-sm-1">
+  <form method="post" action="/managerdirect/">
+  	{% csrf_token %}
+      <p>username: <input type="text" name="username"/> </p>
+      <p>password: <input type="password" name="password"/> </p>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary" value="Log in">Login</button>
+  </form>
+    <div class="border-top pt-3">
+	<small class="text-muted">
+		<a href="/login/">Login as a user </a>
+	</small>
+    </div>
+{% endblock content %}

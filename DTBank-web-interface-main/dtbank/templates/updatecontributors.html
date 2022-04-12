@@ -1,0 +1,52 @@
+{% if message%}
+{{message}}
+{% endif %}
+<br>
+<h2>Institution: {{institution}}<h2>
+<hr>
+<h2>Add author as new user</h2>
+<div class="row">
+      <div class="col-sm-1">
+      <form method="post" action="/addauthors/{{reaction_id}}">
+      	{% csrf_token %}
+          <p>name: <input type="text" name="name"/> </p>
+          <p>username: <input type="text" name="username"/> </p>
+          <p>password: <input type="text" name="password"/> </p>
+        </div>
+    </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+<br>
+<hr>
+<h2>Author is already a user?</h2>
+<div class="row">
+      <div class="col-sm-1">
+      <form method="post" action="/adduserasauthor/{{reaction_id}}">
+        {% csrf_token %}
+          <p>username: <input type="text" name="username"/> </p>
+        </div>
+    </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+<br>
+<hr>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Authors</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for tuple in authors %}
+      <tr>
+        {% for el in tuple%}
+        <td>{{el}}</td>
+        <td><a href="/removeauthor/{{el}}/{{reaction_id}}"> remove </a></td>
+        {% endfor %}
+      </tr>
+  {% endfor %}
+  </tbody>
+</table>
+<hr>
+<a href="/managerhome/">Back to homepage</a>

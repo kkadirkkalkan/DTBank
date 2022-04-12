@@ -1,0 +1,93 @@
+{% if message%}
+{{message}}
+{% endif %}
+<br>
+<hr>
+<h2>Add new user</h2>
+<div class="row">
+      <div class="col-sm-1">
+      <form method="post" action="/saveuser/">
+      	{% csrf_token %}
+          <p>name: <input type="text" name="name"/> </p>
+          <p>username: <input type="text" name="username"/> </p>
+          <p>institution name: <input type="text" name="institution"/> </p>
+          <p>password: <input type="text" name="password"/> </p>
+        </div>
+    </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+<br>
+<hr>
+<h2>Update Affinity Value</h2>
+<div class="row">
+  <div class="col-sm-1">
+  <form method="post" action="/update_affinity/">
+  	{% csrf_token %}
+      <p>Reaction Id: <input type="text" name="id"/> </p>
+      <p>New affinity value: <input type="text" name="affinity"/> </p>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary" value="Update">Update</button>
+  </form>
+<br>
+<hr>
+<h2>Delete Drug</h2>
+<div class="row">
+  <div class="col-sm-1">
+  <form method="post" action="/delete_drug/">
+  	{% csrf_token %}
+      <p>DrugBank Id: <input type="text" name="id"/> </p>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary" value="Delete">Delete</button>
+  </form>
+<br>
+<hr>
+<h2>Delete Protein</h2>
+<div class="row">
+  <div class="col-sm-1">
+  <form method="post" action="/delete_protein/">
+  	{% csrf_token %}
+      <p>UniProt Id: <input type="text" name="id"/> </p>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary" value="Delete">Delete</button>
+  </form>
+<br>
+<hr>
+<h2>Update Contributors</h2>
+<div class="row">
+  <div class="col-sm-1">
+  <form method="post" action="/updatecontributors/">
+    {% csrf_token %}
+      <p>Reaction id: <input type="text" name="reaction_id"/> </p>
+    </div>
+</div>
+    <button type="submit" class="btn btn-primary" value="Update">Click to update</button>
+  </form>
+<hr>
+<h2>View </h2>
+<a href="/viewtable/Drug"> View drugs </a>
+<br>
+
+<a href="/viewtable/UniProt"> View proteins </a>
+<br>
+<a href="/viewtable/Sider_Has"> View side effects </a>
+<br>
+
+<a href="/viewtable/Reaction_Related"> View drug-target interactions </a>
+<br>
+
+<a href="/viewpapers"> View papers </a>
+<br>
+
+<a href="/viewusers/"> View users </a>
+<br>
+<hr>
+<a href="/login/"> Logout</a>
+<br>
+<hr>
+<br>
+
+
+
